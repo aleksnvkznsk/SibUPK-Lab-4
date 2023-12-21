@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 3</title>
+    <style>
+        #field {
+            width: 200px;
+            height: 150px;
+            border: 10px groove black;
+            background-color: #00FF00;
+            position: relative;
+        }
+
+        #ball {
+            transition: all 1s;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="field">
+        <img src="https://js.cx/clipart/ball.svg" id="ball">
+    </div>
+
+    <script>
+        document.onclick = function (e) {
+            var ball = document.getElementById('ball');
+            var field = document.getElementById('field');
+            xy = document.getElementById('')
+
+            var newLeft = e.clientX - ball.clientWidth;
+            var newTop = e.clientY - ball.clientHeight;
+
+            if (newLeft < 0) {
+                newLeft = 0;
+            }
+            if (newTop < 0) {
+                newTop = 0;
+            }
+            if (newLeft > field.clientWidth - ball.clientWidth) {
+                newLeft = field.clientWidth - ball.clientWidth;
+            }
+            if (newTop > field.clientHeight - ball.clientHeight) {
+                newTop = field.clientHeight - ball.clientHeight;
+            }
+
+            ball.style.left = newLeft + 'px';
+            ball.style.top = newTop + 'px';
+        };
+
+    </script>
+
+</body>
+
+</html>

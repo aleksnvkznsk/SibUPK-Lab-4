@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 2</title>
+    <style>
+        #field {
+            width: 200px;
+            height: 150px;
+            border: 10px groove black;
+            background-color: #00FF00;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="coords">(координаты появятся тут)</div>
+    <div id="field"></div>
+    <script>
+        document.onclick = function (e) {
+            xy = document.getElementById('coords')
+            xy.innerHTML = e.clientX + ':' + e.clientY;
+        };
+        var field = document.getElementById('field');
+
+        var coords = field.getBoundingClientRect();
+
+        var coords1 = [coords.left, coords.top];
+        var coords3 = [coords.left + field.clientLeft, coords.top + field.clientTop];
+
+
+        var coords2 = [coords.right, coords.bottom];
+        var coords4 = [coords.right - field.clientLeft, coords.bottom - field.clientTop];
+
+        console.log("Координаты первой точки" + coords1[0] + ", " + coords1[1]);
+        console.log("Координаты второй точки" + coords2[0] + ", " + coords2[1]);
+        console.log("Координаты третьей точки" + coords3[0] + ", " + coords3[1]);
+        console.log("Координаты четвертой точки" + coords4[0] + ", " + coords4[1]);
+
+    </script>
+</body>
+
+</html>
